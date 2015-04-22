@@ -1,6 +1,7 @@
 package uea.edu.br.colabore;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Danilo Oliveira on 22/04/2015.
@@ -9,19 +10,19 @@ public class Categoria {
     public final int id;
     public final String name;
     public final int drawableId;
-    public ArrayList<Item> items;
-
-    public Categoria(int id, String name, int drawableId, ArrayList<Item> items) {
-        this.id = id;
-        this.name = name;
-        this.drawableId = drawableId;
-        this.items = items;
-    }
+    List<Item> items;
 
     public Categoria(int id, String name, int drawableId) {
         this.id = id;
         this.name = name;
         this.drawableId = drawableId;
+    }
+
+    public Categoria(int id, String name, int drawableId, List<Item> items) {
+        this.id = id;
+        this.name = name;
+        this.drawableId = drawableId;
+        this.items = items;
     }
 
     public int getId() {
@@ -36,11 +37,11 @@ public class Categoria {
         return drawableId;
     }
 
-    public ArrayList<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<Item> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 

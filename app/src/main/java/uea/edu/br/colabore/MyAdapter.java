@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Danilo Oliveira on 22/04/2015.
  */
 public class MyAdapter extends BaseAdapter {
-    private final ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+    private final List<Categoria> categorias = new ArrayList<Categoria>();
     private LayoutInflater inflater;
 
 
@@ -23,13 +23,13 @@ public class MyAdapter extends BaseAdapter {
         inflater = LayoutInflater.from(context);
 
         categorias.add(new Categoria(1,"image 1",R.drawable.nature1));
-        categorias.get(0).addItem(new Item(1,"imagem 3",R.drawable.tree1));
-        categorias.get(0).addItem(new Item(2,"imagem 4",R.drawable.nature3));
-
-        categorias.add(new Categoria(2,"image 1",R.drawable.nature2));
-        categorias.get(1).addItem(new Item(1,"imagem 3",R.drawable.tree1));
-        categorias.get(1).addItem(new Item(2,"imagem 4",R.drawable.nature3));
+        categorias.add(new Categoria(2,"image 2",R.drawable.nature2));
+        categorias.add(new Categoria(3,"image 3",R.drawable.nature3));
+        categorias.add(new Categoria(4,"image 4",R.drawable.nature1));
+        categorias.add(new Categoria(5,"image 5",R.drawable.nature2));
+        categorias.add(new Categoria(6,"image 6",R.drawable.nature3));
     }
+
 
     @Override
     public int getCount() {
@@ -57,7 +57,6 @@ public class MyAdapter extends BaseAdapter {
             v = inflater.inflate(R.layout.gridview_item, viewGroup, false);
             v.setTag(R.id.picture, v.findViewById(R.id.picture));
             v.setTag(R.id.text, v.findViewById(R.id.text));
-            v.setPadding(8, 8, 8, 8);
         }
 
         picture = (ImageView)v.getTag(R.id.picture);
